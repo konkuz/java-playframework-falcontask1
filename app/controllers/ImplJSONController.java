@@ -10,15 +10,15 @@ import java.util.Set;
 import models.Person;
 
 /**
- * TODO
+ * Controls JSONmessage Entity from frontend perspective and passes it to backend
  * @author Konstantinas
- *
  */
 public class ImplJSONController extends ImplAppController {
 
 	/**
-	 * TODO
-	 * @return
+	 * Adds JSONmessage to Redis db
+	 * TODO Consider adding validation against JSON format
+	 * @return redirect
 	 */
 	public static Result addJSONMessage() {
 		Person person = Form.form(Person.class).bindFromRequest().get();
@@ -28,8 +28,8 @@ public class ImplJSONController extends ImplAppController {
 	}
 
 	/**
-	 * TODO
-	 * @return
+	 * Retrieves JSON messages from Redis db and provides in JSON format
+	 * @return HTTP 200 and JSON output
 	 */
 	public static Result getJSONMessages() {
 		Person person = new Person();

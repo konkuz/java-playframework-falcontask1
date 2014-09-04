@@ -1,7 +1,7 @@
 package controllers;
 
 /**
- * TODO
+ * Contains types of controllers for easier reference and future maintenance  
  * @author Konstantinas
  *
  */

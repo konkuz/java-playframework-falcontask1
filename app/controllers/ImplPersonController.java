@@ -11,15 +11,16 @@ import java.util.Set;
 import models.Person;
 
 /**
- * TODO
+ * Controls Person Entity from frontend perspective and passes it to backend
  * @author Konstantinas
  *
  */
 public class ImplPersonController extends ImplAppController {
 
 	/**
-	 * TODO
-	 * @return
+	 * Adds Person to Redis db
+	 * TODO Consider adding validation against JSON format
+	 * @return redirect
 	 */
 	public static Result addPerson() {
 		Person person = Form.form(Person.class).bindFromRequest().get();
@@ -29,8 +30,8 @@ public class ImplPersonController extends ImplAppController {
 	}
 
 	/**
-	 * TODO
-	 * @return
+	 * Retrieves JSON messages from Redis db and provides in JSON format
+	 * @return HTTP 200 and JSON output
 	 */
 	public static Result getPersons() {
 		Person person = new Person();

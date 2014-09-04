@@ -9,6 +9,10 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+/**
+ * Models JSONmessage entity
+ * @author Konstantinas
+ */
 public class JSONmessage {
 
 	public String id;
@@ -31,15 +35,28 @@ public class JSONmessage {
 		this.content = content;
 	}
 
+	/**
+	 * Saves JSONmessage to Redis database
+	 * TODO Encapsulate Jedis pooling details implementation
+	 * @param jsonMessage, 
+	 */
 	public void saveToRedis(JSONmessage jsonMessage){
-		JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-		JedisPool jedisPool = new JedisPool(jedisPoolConfig, "localhost");
-		Jedis jedis = jedisPool.getResource(); 
-		jedis.set(jsonMessage.getId(),jsonMessage.getContent());
-		jedisPool.returnResource(jedis);
-		jedisPool.destroy();
+		if(jsonMessage.getContent() != null){
+			JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
+			JedisPool jedisPool = new JedisPool(jedisPoolConfig, "localhost");
+			Jedis jedis = jedisPool.getResource(); 
+			jedis.set(jsonMessage.getId(),jsonMessage.getContent());
+			jedisPool.returnResource(jedis);
+			jedisPool.destroy();
+		}
 	}
 	
+	/**
+	 * Retrieves list of JSONmessages from Redis db 
+	 * TODO Encapsulate Jedis pooling details implementation
+	 * @param key, search key
+	 * @return jsonMessages, filled or empty list of jsonMessages   
+	 */
 	public List<JSONmessage> getFromRedis(String key){
 		
 		JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
