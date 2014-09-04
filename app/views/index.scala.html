@@ -21,7 +21,7 @@
 		<tr>
 			<td>Setup a running env. aligned with the technologies mentioned below.</td>
 			<td>Environment was set up on local machine with Window Vista on it. This is faster 
-			 and Remore server had conncetion issues (conncetion timeout). On remote server on Redis was installed.
+			 and Remote server had connection issues (connection timeout). On remote server only Redis was installed.
 			</td>
 		</tr>
 		<tr>
@@ -30,11 +30,11 @@
 		</tr>
 		<tr>
 			<td>A REST endpoint is taking a dummy json input, and the server puts the REST payload on a Redis pub/sub channels  (or the one the candidate knows the best for this task)</td>
-			<td>Please refer to 'Functional testing' section below. TODO pub/sub channels</td>
+			<td>Please refer to 'Functional testing' section below.</td>
 		</tr>
 		<tr>
 			<td>A Consumer is running the application and processes the freshly received message and persists the message in a NoSQL database (Redis or the one the candidate knows the best)</td>
-			<td></td>
+			<td>This is done, refer to section 'Functional testing'</td>
 		</tr>
 		<tr>
 			<td>A REST endpoint is implemented for getting all the messages persisted in json format</td>
@@ -42,7 +42,7 @@
 		</tr>
 		<tr>
 			<td>The message should also be pushed through Websockets for listening browser clients at the time the message was received on the REST endpoint (http://www.playframework.com/)</td>
-			<td>TODO</td>
+			<td>Done, please refer to console output</td>
 		</tr>
 		<tr>
 			<td>A simple html page is implemented to show the real time message delivery</td>
@@ -50,7 +50,7 @@
 		</tr>
 	</table>
 	<hr />
-	<h3>Functional testing</h3>
+	<h3>Functional testing Redis</h3>
 	<p>Please update values for json and submit to be stored in Redis (is used for functional testing)</p>
 	<form method="POST" action="@routes.ImplJSONController.addJSONMessage()">
 		<input type="text" name="content" value="{'updateMe','updateMe'}" maxlength="256" class="inputField"/>
@@ -58,8 +58,6 @@
 		<a href ="/jsonMessages">Get all in JSONs</a>
 	</form>
 	<hr />
-	<br />
-	<br />
 	<br />
 	<p>Below is just example taken from playframework and used as a base for implementation</p>
 	<br />

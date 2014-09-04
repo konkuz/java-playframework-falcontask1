@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.ArrayList;
 
+import controllers.InterAppControllers;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
@@ -43,8 +44,9 @@ public class JSONmessage {
 	public void saveToRedis(JSONmessage jsonMessage){
 		if(jsonMessage.getContent() != null){
 			JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-			JedisPool jedisPool = new JedisPool(jedisPoolConfig, "localhost");
-			Jedis jedis = jedisPool.getResource(); 
+			JedisPool jedisPool = new JedisPool(jedisPoolConfig, InterAppControllers.REDIS_HOST);
+			Jedis jedis = jedisPool.getResource();
+			jedis.rpush("queue", "id:"+jsonMessage.getId() + ":content"+ jsonMessage.getContent());
 			jedis.set(jsonMessage.getId(),jsonMessage.getContent());
 			jedisPool.returnResource(jedis);
 			jedisPool.destroy();

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.ArrayList;
 
+import controllers.InterApp;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
@@ -43,8 +44,9 @@ public class Person {
 	public void saveToRedis(Person person){
 		if(person.getContent() != null){
 			JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-			JedisPool jedisPool = new JedisPool(jedisPoolConfig, "localhost");
-			Jedis jedis = jedisPool.getResource(); 
+			JedisPool jedisPool = new JedisPool(jedisPoolConfig, InterApp.REDIS_HOST);
+			Jedis jedis = jedisPool.getResource();
+			jedis.rpush("queue", "id:"+person.getId() + ":content"+ person.getContent());
 			jedis.set(person.getId(),person.getContent());
 			jedisPool.returnResource(jedis);
 			jedisPool.destroy();
@@ -60,7 +62,7 @@ public class Person {
 	public List<Person> getFromRedis(String key){
 
 		JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-		JedisPool jedisPool = new JedisPool(jedisPoolConfig, "localhost");
+		JedisPool jedisPool = new JedisPool(jedisPoolConfig, InterApp.REDIS_HOST);
 		Jedis jedis = jedisPool.getResource();
 
 		Set<String> personKeys = jedis.keys(key);

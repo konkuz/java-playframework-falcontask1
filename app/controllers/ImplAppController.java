@@ -9,7 +9,7 @@ import views.html.*;
  *
  */
 public class ImplAppController extends Controller implements InterAppControllers {
-
+	
 	/**
 	 * Renders main page index page
 	 * @return
@@ -30,6 +30,5 @@ public class ImplAppController extends Controller implements InterAppControllers
 			return redirect(routes.ImplAppController.index());
 		default: throw new RuntimeException("Missing implementation in class Application"); 	
 		}
-
 	}
 }

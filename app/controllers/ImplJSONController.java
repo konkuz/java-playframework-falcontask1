@@ -7,7 +7,7 @@ import play.data.Form;
 import static play.libs.Json.*;
 import java.util.List;
 import java.util.Set;
-import models.Person;
+import models.JSONmessage;
 
 /**
  * Controls JSONmessage Entity from frontend perspective and passes it to backend
@@ -21,9 +21,9 @@ public class ImplJSONController extends ImplAppController {
 	 * @return redirect
 	 */
 	public static Result addJSONMessage() {
-		Person person = Form.form(Person.class).bindFromRequest().get();
-		person.setId(JSON_MESSAGE_KEY + Long.toString(System.currentTimeMillis()));
-		person.saveToRedis(person);
+		JSONmessage jsonMessage = Form.form(JSONmessage.class).bindFromRequest().get();
+		jsonMessage.setId(JSON_MESSAGE_KEY + Long.toString(System.currentTimeMillis()));
+		jsonMessage.saveToRedis(jsonMessage);
 		return redirectToApplication(EnumControllerTypes.JSON_MESSAGE);
 	}
 
@@ -32,8 +32,8 @@ public class ImplJSONController extends ImplAppController {
 	 * @return HTTP 200 and JSON output
 	 */
 	public static Result getJSONMessages() {
-		Person person = new Person();
-		List<Person> persons = person.getFromRedis(REDIS_JSON_MESSAGE_KEY);
-		return ok(toJson(persons));
+		JSONmessage jsonMessage = new JSONmessage();
+		List<JSONmessage> jsonMessages = jsonMessage.getFromRedis(REDIS_JSON_MESSAGE_KEY);
+		return ok(toJson(jsonMessages));
 	}
 }

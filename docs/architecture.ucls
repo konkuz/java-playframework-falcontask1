@@ -66,7 +66,7 @@
     </display>  
   </class>  
   <generalization id="8">    
-    <end type="SOURCE" refId="2"/>    
+    <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="5"/>  
   </generalization>  
   <realization id="9">    
@@ -74,7 +74,7 @@
     <end type="TARGET" refId="1"/>  
   </realization>  
   <generalization id="10">    
-    <end type="SOURCE" refId="3"/>    
+    <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="5"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
