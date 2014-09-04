@@ -1,7 +1,6 @@
 @()
 
 @main("Falcon Social test ") {
-	<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
     <style>
     	.inputField{
     		width:350px;
@@ -42,11 +41,11 @@
 		</tr>
 		<tr>
 			<td>The message should also be pushed through Websockets for listening browser clients at the time the message was received on the REST endpoint (http://www.playframework.com/)</td>
-			<td>Done, please refer to console output</td>
+			<td>Done, please refer to console output and before that click on "Web socket messages"</td>
 		</tr>
 		<tr>
 			<td>A simple html page is implemented to show the real time message delivery</td>
-			<td>TODO</td>
+			<td>Connection so websocket works, however there is a problem with receiving messages</td>
 		</tr>
 	</table>
 	<hr />
@@ -56,6 +55,7 @@
 		<input type="text" name="content" value="{'updateMe','updateMe'}" maxlength="256" class="inputField"/>
 		<button>Add JSON</button>
 		<a href ="/jsonMessages">Get all in JSONs</a>
+		<a href ="/websocketText" target="_blank">Web socket messages</a>
 	</form>
 	<hr />
 	<br />

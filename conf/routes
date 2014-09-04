@@ -7,6 +7,7 @@ GET     /                           controllers.ImplAppController.index()
 POST    /jsonMessage                controllers.ImplJSONController.addJSONMessage()
 GET     /jsonMessages               controllers.ImplJSONController.getJSONMessages()
 GET     /websocket                  controllers.ImplWebSocketController.index()
+GET     /websocketText              controllers.ImplWebSocketTextController.index()
 
 #previous solution
 POST    /person                     controllers.ImplPersonController.addPerson()

@@ -7,5 +7,10 @@ package controllers;
  */
 public interface InterApp {
 
-	public final static String REDIS_HOST = "localhost";
+	public final static String REDIS_HOST = "localhost",
+			MESSAGE_WAITING = "Waiting for a message in the queue!",
+			MESSAGE_RECEIVED = "Message received",
+	        MESSAGE_KEY = "KEY:",
+	        MESSAGE_VALUE = "VALUE:",
+	        MESSAGE_CONNECTED = "Connected!";
 }

@@ -17,16 +17,22 @@ public class ImplWebSocketController{
 
 			// Called when the Websocket Handshake is done.
 			public void onReady(WebSocket.In<String> in, WebSocket.Out<String> out) {
-				System.out.println("Connected!");
-				out.write("Connected!");
+				out.write(InterApp.MESSAGE_CONNECTED);
+				System.out.println(InterApp.MESSAGE_CONNECTED);
+				
 				Jedis jedis = new Jedis(InterApp.REDIS_HOST);   
 		        List<String> messages = null;
 		        while(true){
-		          out.write("Waiting for a message in the queue!");
+		          out.write(InterApp.MESSAGE_WAITING);	
+		          System.out.println(InterApp.MESSAGE_WAITING);
 		          messages = jedis.blpop(0,"queue");
-		          System.out.println("Got the message");
-		          System.out.println("KEY:" + messages.get(0) + " VALUE:" + messages.get(1));		    
-		        }
+		          out.write(InterApp.MESSAGE_RECEIVED);
+		          System.out.println(InterApp.MESSAGE_RECEIVED);
+		          out.write(InterApp.MESSAGE_KEY + messages.get(0) 
+		        		  + InterApp.MESSAGE_VALUE + messages.get(1));
+		          System.out.println(InterApp.MESSAGE_KEY + messages.get(0) 
+		        		  + InterApp.MESSAGE_VALUE + messages.get(1));
+		        } 
 			}
 		};
 	}
