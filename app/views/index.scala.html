@@ -1,0 +1,27 @@
+@()
+
+@main("Falcon Social test ") {
+	<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+    <style>
+    	.inputField{
+    		width:350px;
+    	}
+    </style>
+	<ul id="persons"></ul>
+
+	<form method="POST" action="@routes.ImplPersonController.addPerson()">
+		<input type="text" name="content" value="newPersonUpdate" maxlength="256" class="inputField" />
+		<button>Add Person</button>
+		<a href ="/persons">Get all in JSON</a>
+	</form>
+	<br />
+	<br />
+	<form method="POST" action="@routes.ImplJSONController.addJSONMessage()">
+		<input type="text" name="content" value="{'updateMe','updateMe'}" maxlength="256" class="inputField"/>
+		<button>Add JSON</button>
+		<a href ="/jsonMessages">Get all in JSONs</a>
+	</form>
+	<br />
+	<br />
+	<a href ="/deadlink">Dead link example</a>
+}

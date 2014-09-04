@@ -1,0 +1,29 @@
+Platform Engineer test 
+Any candidate for our platform engineer position has to solve this test in a timely manner and the test will be assessed by the Head of R&D and the Head of Platform and data team.
+
+This task is meant to verify the candidates understanding of different concepts (REST, Messaging, Websockets) and show the pragmatic approach the candidate has. The completion is expected in maximum 20 hrs.
+
+Falcon Social will provide a AWS image (Ubuntu*) and we expect that the test is running and fully functional when it’s handed over to Falcon social for review. 
+
+* (aws information will be provide in a separate email)
+The task
+•	Setup a running env. aligned with the technologies mentioned below.
+•	Develop the application in Play framework, in Java languages (http://www.playframework.com//)
+•	A REST endpoint is taking a dummy json input, and the server puts the REST payload on a Redis pub/sub channels  (or the one the candidate knows the best for this task)
+•	A Consumer is running the application and processes the freshly received message and persists the message in a NoSQL database (Redis or the one the candidate knows the best)
+•	A REST endpoint is implemented for getting all the messages persisted in json format
+•	The message should also be pushed through Websockets for listening browser clients at the time the message was received on the REST endpoint (http://www.playframework.com/)
+•	A simple html page is implemented to show the real time message delivery
+
+Note : please setup a github repository to host the code and share it with your finale note for code review. 
+requirements
+•	All tasks are solved in the solution 
+•	The application has a solid commit history 
+•	The application is build for scale 
+•	The application is build for test
+
+“Passion is our fuel” we what to see the same from every candidate and that has to shine through the results as well. 
+
+Best regards 
+Dennis Green-Lieber
+Head of R&D 
