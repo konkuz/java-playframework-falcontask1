@@ -1,3 +1,4 @@
-# Getting started with Play (Java)
+# Java playframework-falcontask1
 
-This project demonstrate how to create a simple CRUD application with Play. A screencast to the project exist on [playframework.com](http://playframework.com)
+Please refer to README folder for details
+
