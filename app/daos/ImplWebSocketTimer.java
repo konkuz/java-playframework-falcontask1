@@ -1,12 +1,8 @@
 package daos;
 
 import play.mvc.*;
-import play.libs.*;
-import play.libs.F.*;
-
 import java.util.*;
 
-import appbasics.InterApp;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
@@ -27,6 +23,10 @@ public class ImplWebSocketTimer extends TimerTask implements InterRedisDao {
 		this.wsConnections = wsConnections;
 	}
 
+	/* 
+	 * Picks up messages from Redis pushes them to all websocket connections  
+	 * @see java.util.TimerTask#run()
+	 */
 	@Override
 	public void run() {
 		JedisPool jedisPool = ImplRedisJSONmessageDao.getJedisPool();
@@ -39,7 +39,7 @@ public class ImplWebSocketTimer extends TimerTask implements InterRedisDao {
 		//there is no way to check if "out" was closed
 		List<WebSocket.Out<String>> wsClonedConnections = 
 				(ArrayList<WebSocket.Out<String>>)getWsConnections().clone(); 
-		for (WebSocket.Out<String> out : wsConnections) {
+		for (WebSocket.Out<String> out : wsClonedConnections) {
 			/* TODO fires exception java.nio.channels.ClosedChannelException
 			is fired by closed channel and is uncaught exception in playframework*/
 			out.write(message);

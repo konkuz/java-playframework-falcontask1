@@ -1,6 +1,5 @@
 package appbasics;
 
-
 /**
  * Exposes number of constants for internal to component as wells as cross package
  * usage.

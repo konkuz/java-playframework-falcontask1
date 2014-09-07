@@ -2,16 +2,8 @@ package controllers;
 
 import play.mvc.*;
 import views.html.*;
-import play.libs.*;
-
-import java.util.List;
 
 import models.WebSocketConnections;
-import daos.ImplRedisJSONmessageDao;
-import appbasics.InterApp;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
 
 /**
  * Controls rendering of web socket messages page and serves messages

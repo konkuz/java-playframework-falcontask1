@@ -1,19 +1,14 @@
 package controllers;
 
 import play.mvc.*;
-import views.html.*;
-import play.db.ebean.Model;
 import play.data.Form;
 import static play.libs.Json.*;
 
 import java.util.List;
-import java.util.Set;
 
-import daos.AbstractRedisDao;
 import daos.ImplRedisJSONmessageDao;
 import appbasics.EnumControllerTypes;
 import models.JSONmessage;
-import models.WebSocketConnections;
 
 /**
  * Controls JSONmessage Entity from frontend perspective and passes it to backend
@@ -37,7 +32,6 @@ public class ImplJSONController extends ImplAppController {
 	 * @return HTTP 200 and JSON output
 	 */
 	public static Result retrieveJSONMessages() {
-		JSONmessage jsonMessage = new JSONmessage();
 		List<JSONmessage> jsonMessages = new ImplRedisJSONmessageDao().retrieveFromRedis(REDIS_JSON_MESSAGE_KEY);
 		return ok(toJson(jsonMessages));
 	}

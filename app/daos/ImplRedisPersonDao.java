@@ -9,6 +9,10 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import models.Person;
 
+/**
+ * Responsible for data access operations for Person object
+ * @author Konstantinas
+ */
 public class ImplRedisPersonDao extends AbstractRedisDao {
 
 	/**
@@ -52,5 +56,4 @@ public class ImplRedisPersonDao extends AbstractRedisDao {
 		returnJedis(jedis);
 		return persons;
 	}
-
 }

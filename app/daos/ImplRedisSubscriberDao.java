@@ -4,13 +4,13 @@ import models.JRedisSubscriber;
 import redis.clients.jedis.Jedis;
 
 /**
+ * Responsible for subscribing to channels on Redis
  * @author Konstantinas
- *
  */
 public class ImplRedisSubscriberDao extends AbstractRedisDao {
 		
 	/**
-	 * Executed dedicated subscription. Runs in separate thread because
+	 * Executes dedicated subscription. Runs in separate thread because
 	 * it is blocking operation
 	 */
 	public void subscribeDefaultChannels(){

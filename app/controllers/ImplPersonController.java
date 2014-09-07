@@ -2,13 +2,10 @@ package controllers;
 
 
 import play.mvc.*;
-import views.html.*;
-import play.db.ebean.Model;
 import play.data.Form;
 import static play.libs.Json.*;
 
 import java.util.List;
-import java.util.Set;
 
 import daos.ImplRedisPersonDao;
 import appbasics.EnumControllerTypes;
@@ -38,7 +35,6 @@ public class ImplPersonController extends ImplAppController {
 	 * @return HTTP 200 and JSON output
 	 */
 	public static Result retrievePersons() {
-		Person person = new Person();
 		List<Person> persons = new ImplRedisPersonDao().retrieveFromRedis(REDIS_PERSON_KEY);
 		return ok(toJson(persons));
 	}

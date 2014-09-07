@@ -5,14 +5,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import models.JRedisSubscriber;
 import models.JSONmessage;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPubSub;
-import redis.clients.jedis.exceptions.JedisConnectionException;
 
 /**
+ * Responsible for data access operations for JSONmessage
  * @author Konstantinas
  *
  */

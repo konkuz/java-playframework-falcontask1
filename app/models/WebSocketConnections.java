@@ -1,12 +1,8 @@
 package models;
 
 import play.mvc.*;
-import play.libs.*;
 import play.libs.F.*;
-import redis.clients.jedis.Jedis;
-
 import java.util.*;
-
 import daos.ImplWebSocketTimer;
 import appbasics.InterApp;
 
@@ -36,7 +32,7 @@ public class WebSocketConnections extends AbstractDomainEntities {
 		//add to list of connections
 		wsConnections.add(out);
         
-		//start timer for sending new message to connections
+		//start/restart timer for sending new message to connections on newly appearing connection
 		startMessageTimer(timer, wsConnections);
 
 		//Registers a message callback.

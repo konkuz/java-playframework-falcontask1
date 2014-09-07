@@ -3,7 +3,7 @@
   generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
   <interface id="1" language="java" name="appbasics.InterApp" project="java-playframework-falcontask1" 
     file="/java-playframework-falcontask1/app/appbasics/InterApp.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="149" y="180"/>    
+    <position height="-1" width="-1" x="121" y="165"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </interface>  
   <interface id="2" language="java" name="controllers.InterAppControllers" project="java-playframework-falcontask1" 
     file="/java-playframework-falcontask1/app/controllers/InterAppControllers.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="526" y="82"/>    
+    <position height="-1" width="-1" x="602" y="35"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </interface>  
   <class id="3" language="java" name="controllers.ImplAppController" project="java-playframework-falcontask1" 
     file="/java-playframework-falcontask1/app/controllers/ImplAppController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="523" y="227"/>    
+    <position height="-1" width="-1" x="616" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="controllers.ImplJSONController" project="java-playframework-falcontask1" 
     file="/java-playframework-falcontask1/app/controllers/ImplJSONController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="372" y="382"/>    
+    <position height="-1" width="-1" x="465" y="328"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -40,7 +40,7 @@
   <class id="5" language="java" name="controllers.ImplPersonController" project="java-playframework-falcontask1" 
     file="/java-playframework-falcontask1/app/controllers/ImplPersonController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="558" y="405"/>    
+    <position height="-1" width="-1" x="918" y="331"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -50,7 +50,7 @@
   <class id="6" language="java" name="controllers.ImplWebSocketController" project="java-playframework-falcontask1" 
     file="/java-playframework-falcontask1/app/controllers/ImplWebSocketController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="751" y="400"/>    
+    <position height="-1" width="-1" x="695" y="327"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -59,7 +59,7 @@
   </class>  
   <interface id="7" language="java" name="daos.InterRedisDao" project="java-playframework-falcontask1" 
     file="/java-playframework-falcontask1/app/daos/InterRedisDao.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="253" y="502"/>    
+    <position height="-1" width="-1" x="367" y="430"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -68,7 +68,7 @@
   </interface>  
   <class id="8" language="java" name="daos.AbstractRedisDao" project="java-playframework-falcontask1" 
     file="/java-playframework-falcontask1/app/daos/AbstractRedisDao.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="557" y="587"/>    
+    <position height="-1" width="-1" x="561" y="567"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -77,7 +77,7 @@
   </class>  
   <class id="9" language="java" name="daos.ImplRedisJSONmessageDao" project="java-playframework-falcontask1" 
     file="/java-playframework-falcontask1/app/daos/ImplRedisJSONmessageDao.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="419" y="804"/>    
+    <position height="-1" width="-1" x="493" y="800"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -86,7 +86,7 @@
   </class>  
   <class id="10" language="java" name="daos.ImplRedisPersonDao" project="java-playframework-falcontask1" 
     file="/java-playframework-falcontask1/app/daos/ImplRedisPersonDao.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="671" y="802"/>    
+    <position height="-1" width="-1" x="975" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -95,7 +95,7 @@
   </class>  
   <class id="11" language="java" name="daos.ImplRedisSubscriberDao" project="java-playframework-falcontask1" 
     file="/java-playframework-falcontask1/app/daos/ImplRedisSubscriberDao.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="895" y="770"/>    
+    <position height="-1" width="-1" x="740" y="794"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -131,7 +131,7 @@
   </class>  
   <class id="15" language="java" name="models.JRedisSubscriber" project="java-playframework-falcontask1" 
     file="/java-playframework-falcontask1/app/models/JRedisSubscriber.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="137" y="1085"/>    
+    <position height="-1" width="-1" x="148" y="1176"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -165,74 +165,74 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="19">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <realization id="20">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="13"/>  
-  </realization>  
-  <generalization id="21">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="14"/>  
-  </generalization>  
-  <generalization id="22">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <generalization id="23">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
-  <generalization id="24">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
-  <generalization id="25">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="14"/>  
-  </generalization>  
-  <realization id="26">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="7"/>  
-  </realization>  
-  <realization id="27">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="7"/>  
-  </realization>  
-  <generalization id="28">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <generalization id="29">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
-  <generalization id="30">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <generalization id="31">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <realization id="32">    
+  <realization id="19">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="2"/>  
   </realization>  
-  <generalization id="33">    
-    <end type="SOURCE" refId="16"/>    
+  <generalization id="20">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="21">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="22">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="23">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="24">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="25">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="26">    
+    <end type="SOURCE" refId="18"/>    
     <end type="TARGET" refId="14"/>  
   </generalization>  
-  <realization id="34">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="13"/>  
+  <realization id="27">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="7"/>  
   </realization>  
-  <generalization id="35">    
+  <generalization id="28">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="8"/>  
   </generalization>  
+  <realization id="29">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <generalization id="30">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <realization id="31">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <generalization id="32">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <generalization id="33">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <generalization id="34">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <realization id="35">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
