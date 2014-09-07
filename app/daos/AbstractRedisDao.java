@@ -6,7 +6,7 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 /**
- * Responsible common data access operations, currently on Redis. 
+ * Responsible for common data access operations, currently on Redis. 
  * @author Konstantinas
  *
  */
