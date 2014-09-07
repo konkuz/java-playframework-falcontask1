@@ -1,29 +1,28 @@
 @()
 
 @main("Falcon Social test") {
-	<ul id ="webSocketText"></ul>
-	<script>
-		$(document).ready(function() {
+	<h3>Websocket, real time message delivery</h3>
+	<ul id ="webSocketMessages"></ul>
+	<script type ="text/javascript">
+		jQuery(document).ready(function() { 
 			if ("WebSocket" in window){
 				var socket= new WebSocket('ws://127.0.0.1:9000/websocket');
 				socket.onopen = function() {
-				    socket.send('hello');
-				    jQuery('#webSocketText').append("<li>Connected!</li>");
+				    socket.send("Connected!");
 				};
 				socket.onmessage = function(evt) {
-					var received_msg = evt.data;
-					jQuery('#webSocketText').append("<li>"+received_msg+"</li>");
+					var socketMessage = evt.data;
+					jQuery("#webSocketMessages").append("<li>"+socketMessage+"</li>");
 				};
 				socket.error = function() {
-					jQuery('#webSocketText').append("<li>Websocket error</li>");
+					jQuery("#webSocketMessages").append("<li>Websocket error</li>");
 				};
 				socket.close = function() {
-					jQuery('#webSocketText').append("<li>Disconnected</li>");
+					jQuery("#webSocketMessages").append("<li>Disconnected</li>");
 				};
-			  }else{
-				     // The browser doesn't support WebSocket
-				     jQuery('#webSocketText').append("WebSocket NOT supported by your Browser!");
-			  }	
-		});
+			 }else{// The browser doesn't support WebSocket
+				    jQuery("#webSocketMessages").append("WebSocket NOT supported by your Browser!");
+			 }	
+		})
 	</script>
 }

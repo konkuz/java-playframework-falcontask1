@@ -1,5 +1,11 @@
 package controllers;
 
+import java.util.ArrayList;
+import java.util.Timer;
+
+import daos.ImplWebSocketTimer;
+import appbasics.EnumControllerTypes;
+import appbasics.InterApp;
 import play.mvc.*;
 import views.html.*;
 
@@ -12,7 +18,7 @@ public class ImplAppController extends Controller implements InterAppControllers
 	
 	/**
 	 * Renders main page index page
-	 * @return
+	 * @return HTTP 200
 	 */
 	public static Result index() {
 		return ok(index.render());
@@ -28,7 +34,7 @@ public class ImplAppController extends Controller implements InterAppControllers
 		case PERSON:// for now break through
 		case JSON_MESSAGE:
 			return redirect(routes.ImplAppController.index());
-		default: throw new RuntimeException("Missing implementation in class Application"); 	
+		default: throw new RuntimeException(EXEPTION_MISSING_IMPL); 	
 		}
 	}
 }

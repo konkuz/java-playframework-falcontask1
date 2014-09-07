@@ -8,20 +8,19 @@
     	.hidden{
     		display:none;
     	}
+    	.toggable{
+			color: blue;    	
+    	}
     </style>
-    <h3>Task description</h3>
-    <a onclick = "document.getElementById('description').style.display = 'block';">Show</a>
-    <a onclick = "document.getElementById('description').style.display = 'none';">Hide</a>
-	<table border="1" width="50%" id="description" class="hidden">
+    <h3>Task description <a class ="toggable" >Toggle</a></h3>
+	<table border="1" width="50%" id="toggleMe" class="hidden">
 		<tr>
 			<th>Requirement</th>
 			<th>Status</th>
 		</tr>
 		<tr>
 			<td>Setup a running env. aligned with the technologies mentioned below.</td>
-			<td>Environment was set up on local machine with Window Vista on it. This is faster 
-			 and Remote server had connection issues (connection timeout). On remote server only Redis was installed.
-			</td>
+			<td>Environment was set up on local machine with Window Vista on it. Remote server TODO</td>
 		</tr>
 		<tr>
 			<td>Develop the application in Play framework, in Java languages (http://www.playframework.com/)</td>
@@ -29,7 +28,7 @@
 		</tr>
 		<tr>
 			<td>A REST endpoint is taking a dummy json input, and the server puts the REST payload on a Redis pub/sub channels  (or the one the candidate knows the best for this task)</td>
-			<td>Please refer to 'Functional testing' section below.</td>
+			<td>Please refer to 'Functional testing' section below.TODO pub sub</td>
 		</tr>
 		<tr>
 			<td>A Consumer is running the application and processes the freshly received message and persists the message in a NoSQL database (Redis or the one the candidate knows the best)</td>
@@ -49,23 +48,32 @@
 		</tr>
 	</table>
 	<hr />
-	<h3>Functional testing Redis</h3>
+	<h3>Functional testing JSON to Redis</h3>
 	<p>Please update values for json and submit to be stored in Redis (is used for functional testing)</p>
 	<form method="POST" action="@routes.ImplJSONController.addJSONMessage()">
-		<input type="text" name="content" value="{'updateMe','updateMe'}" maxlength="256" class="inputField"/>
+		<input type="text" name="content" value="updateMe" maxlength="256" class="inputField"/>
 		<button>Add JSON</button>
-		<a href ="/jsonMessages">Get all in JSONs</a>
-		<a href ="/websocketText" target="_blank">Web socket messages</a>
+		<a href ="/jsonMessages">Get all in JSON</a>
+		<a href ="/websocketMessages" target="_blank">Web socket messages</a>
 	</form>
-	<hr />
 	<br />
+	<hr />
 	<p>Below is just example taken from playframework and used as a base for implementation</p>
 	<br />
 	<ul id ="persons"></ul>
 	<form method="POST" action="@routes.ImplPersonController.addPerson()">
-		<input type="text" name="content" value="newPersonUpdate" maxlength="256" class="inputField" />
+		<input type="text" name="name" value="newPersonUpdate" maxlength="256" class="inputField" />
 		<button>Add Person</button>
 		<a href ="/persons">Get all in JSON</a>
 	</form>
 	<hr />
+	<script type ="text/javascript">
+		jQuery(document).ready(function() { 
+			if (jQuery(".toggable").length > 0){
+				jQuery(".toggable").click(function() {
+					jQuery("#toggleMe").toggle();
+				});
+			}	
+		})
+	</script>
 }

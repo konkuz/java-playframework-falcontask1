@@ -5,13 +5,13 @@
 # Home page
 GET     /                           controllers.ImplAppController.index()
 POST    /jsonMessage                controllers.ImplJSONController.addJSONMessage()
-GET     /jsonMessages               controllers.ImplJSONController.getJSONMessages()
-GET     /websocket                  controllers.ImplWebSocketController.index()
-GET     /websocketText              controllers.ImplWebSocketTextController.index()
+GET     /jsonMessages               controllers.ImplJSONController.retrieveJSONMessages()
+GET     /websocket                  controllers.ImplWebSocketController.runWebsocket()
+GET     /websocketMessages          controllers.ImplWebSocketController.index()
 
 #previous solution
 POST    /person                     controllers.ImplPersonController.addPerson()
-GET     /persons                    controllers.ImplPersonController.getPersons()
+GET     /persons                    controllers.ImplPersonController.retrievePersons()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

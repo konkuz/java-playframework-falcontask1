@@ -1,38 +1,46 @@
 package controllers;
 
 import play.mvc.*;
+import views.html.*;
+import play.libs.*;
 
 import java.util.List;
 
+import models.WebSocketConnections;
+import daos.ImplRedisJSONmessageDao;
+import appbasics.InterApp;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
 
 /**
- * Web socket controller
+ * Controls rendering of web socket messages page and serves messages
  * @author Konstantinas
  */
-public class ImplWebSocketController{
+public class ImplWebSocketController extends ImplAppController {
 
-	public static WebSocket<String> index() {
+	/**
+	 * Renders websocket page for displaying messages
+	 * @return HTTP 200
+	 */
+	public static Result index() {
+		return ok(websocket.render());
+	}
+
+	/**
+	 * Runs websocket
+	 * @return websocket
+	 */
+	public static WebSocket<String> runWebsocket() {
 		return new WebSocket<String>() {
 
-			// Called when the Websocket Handshake is done.
+			/**
+			 * Called when WebSocket is ready (hanshake achieved)
+			 * @param in
+			 * @param out
+			 */
 			public void onReady(WebSocket.In<String> in, WebSocket.Out<String> out) {
-				out.write(InterApp.MESSAGE_CONNECTED);
-				System.out.println(InterApp.MESSAGE_CONNECTED);
-				
-				Jedis jedis = new Jedis(InterApp.REDIS_HOST);   
-		        List<String> messages = null;
-		        while(true){
-		          out.write(InterApp.MESSAGE_WAITING);	
-		          System.out.println(InterApp.MESSAGE_WAITING);
-		          messages = jedis.blpop(0,"queue");
-		          out.write(InterApp.MESSAGE_RECEIVED);
-		          System.out.println(InterApp.MESSAGE_RECEIVED);
-		          out.write(InterApp.MESSAGE_KEY + messages.get(0) 
-		        		  + InterApp.MESSAGE_VALUE + messages.get(1));
-		          System.out.println(InterApp.MESSAGE_KEY + messages.get(0) 
-		        		  + InterApp.MESSAGE_VALUE + messages.get(1));
-		        } 
+				WebSocketConnections.start(in,out);
 			}
 		};
 	}
