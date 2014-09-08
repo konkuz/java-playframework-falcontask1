@@ -1,6 +1,5 @@
 package controllers;
 
-import appbasics.EnumControllerTypes;
 import play.mvc.*;
 import views.html.*;
 
@@ -24,12 +23,7 @@ public class ImplAppController extends Controller implements InterAppControllers
 	 * @param typesControllers, type o controller
 	 * @return redirect
 	 */
-	public static Result redirectToApplication(EnumControllerTypes typesControllers){
-		switch(typesControllers){
-		case PERSON:// for now break through
-		case JSON_MESSAGE:
-			return redirect(routes.ImplAppController.index());
-		default: throw new RuntimeException(EXEPTION_MISSING_IMPL); 	
-		}
+	public static Result redirectToApplication(){
+		return redirect(routes.ImplAppController.index());
 	}
 }

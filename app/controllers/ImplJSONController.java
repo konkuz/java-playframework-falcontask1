@@ -7,7 +7,6 @@ import static play.libs.Json.*;
 import java.util.List;
 
 import daos.ImplRedisJSONmessageDao;
-import appbasics.EnumControllerTypes;
 import models.JSONmessage;
 
 /**
@@ -24,7 +23,7 @@ public class ImplJSONController extends ImplAppController {
 	public static Result addJSONMessage() {
 		JSONmessage jsonMessage = Form.form(JSONmessage.class).bindFromRequest().get();
 		new ImplRedisJSONmessageDao().saveToDefaulRedis(jsonMessage);
-		return redirectToApplication(EnumControllerTypes.JSON_MESSAGE);
+		return redirectToApplication();
 	}
 
 	/**

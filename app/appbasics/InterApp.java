@@ -20,15 +20,15 @@ public interface InterApp {
 	public final static int SUBMIT_TIMER_DELAY = 0,
 			SUBMIT_TIMER_INTERVAL = 1,
 			MESSAGE_TIMER_DELAY = 0,
-			MESSAGE_TIMER_INTERVAL = 100;
+			MESSAGE_TIMER_INTERVAL = 1;
 
 	public final static String MESSAGE_SUBSCRIPTION_FAILED = "Subscription failed:";
 
 	/**
 	 * Keys to store and search for messages in Redis
 	 */
-	public final static String JSON_MESSAGE_KEY = EnumControllerTypes.JSON_MESSAGE.toString(),
-			PERSON_KEY = EnumControllerTypes.PERSON.toString(),
+	public final static String JSON_MESSAGE_KEY = "JSON_MESSAGE",
+			PERSON_KEY = "PERSON",
 			REDIS_JSON_MESSAGE_KEY = JSON_MESSAGE_KEY + "*",
 			REDIS_PERSON_KEY = PERSON_KEY + "*"; 
 }

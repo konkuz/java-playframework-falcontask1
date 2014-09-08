@@ -8,7 +8,6 @@ import static play.libs.Json.*;
 import java.util.List;
 
 import daos.ImplRedisPersonDao;
-import appbasics.EnumControllerTypes;
 import models.Person;
 
 /**
@@ -27,7 +26,7 @@ public class ImplPersonController extends ImplAppController {
 		Person person = Form.form(Person.class).bindFromRequest().get();
 		person.setId(PERSON_KEY + Long.toString(System.currentTimeMillis()));
 		new ImplRedisPersonDao().saveToRedis(person);
-		return redirectToApplication(EnumControllerTypes.PERSON);
+		return redirectToApplication();
 	}
 
 	/**
